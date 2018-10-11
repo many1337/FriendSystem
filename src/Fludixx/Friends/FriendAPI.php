@@ -26,17 +26,6 @@ class FriendAPI extends PluginBase implements Listener {
 	public function onEnable() : void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		self::$instance = $this;
-		$sagiri = $this->getServer()->getPluginManager()->getPlugin("Sagiri-API");
-		$this->getLogger()->info("Sagiri-API wird geladen...");
-		if($sagiri) {
-			$sagiri->getLogger()->info($sagiri::PREFIX."Anfrage wird gelesen...");
-			$op = $sagiri->getCoOp("Friend-API");
-			$this->withSagiri = $op;
-		} else {
-			$this->getLogger()->error(self::PREFIX."Konnte keinen Kontakt mit Sagiri aufnehmen!\n".f::WHITE."NOTE: "
-				.f::AQUA.f::UNDERLINE."Errors can accour without Sagiri-API!".f::RESET);
-			$this->setEnabled(false);
-		}
 		$this->registerCommands();
 	}
 	public function addFriend(string $playername, string $newfriend): bool {
