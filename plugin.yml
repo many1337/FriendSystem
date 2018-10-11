@@ -2,5 +2,4 @@ name: Friends-API
 main: Fludixx\Friends\FriendAPI
 description: "Friend System for Pocketmine MP"
 api: 3.0.0
-depend: ['Sagiri-API']
-version: 0.1
+version: 0.2
